@@ -11,6 +11,52 @@ let school = {
     }
 }
 
+//creating multiple schools using a constructor
+
+function School(name, location, studentsCount, schoolType) {
+    this.name = name;
+    this.location = location;
+    this.studentsCount = studentsCount;
+    this.schoolType = schoolType;
+    
+    // Method to introduce the school
+    this.introduce = function() {
+      return `Welcome to ${this.name}, located in ${this.location}. We are a ${this.schoolType} with ${this.studentsCount} students.`;
+    };
+  }
+  
+  // Creating two new school objects
+  const school1 = new School("St Lawrence", "Wakiso", 1200, "high school");
+  const school2 = new School("Riverstone Academy", "Mukono", 800, "primary school");
+  
+  // Introducing the schools
+  console.log(school1.introduce());
+  console.log(school2.introduce());
+  
+//school introduction
+function introduceSchool() {
+    return `${this.name}, ${this.location}, ${this.studentcount}`;
+
+};
+console.log(school.introduceSchool());
+
+
+  // Destructuring the school object
+  const { name, location, studentsCount } = school;
+  
+  // Logging the destructured variables
+  console.log(name);           
+  console.log(location);       
+  console.log(studentsCount);  
+  
+// looping through all the properties
+for (let key in school) {
+    console.log(`${key}: ${school[key]}`)
+}
+
+//Accessing data using dot notation
+
+console.log('School Name:', school.name);
 //Calculating the age of the school
 let age = school.calculateSchoolAge(currentyear)
 
